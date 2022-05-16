@@ -1,0 +1,145 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4760,        135]
+NotebookOptionsPosition[      3688,        110]
+NotebookOutlinePosition[      4098,        126]
+CellTagsIndexPosition[      4055,        123]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Define functions for leading edge (f1) and trailing edge (f2)\
+\>", "Text",
+ CellChangeTimes->{{3.8610396776009617`*^9, 
+  3.8610396912287874`*^9}},ExpressionUUID->"75053107-d11b-47b3-bc34-\
+623250e7b4f9"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f1", "[", "x_", "]"}], "=", " ", 
+   RowBox[{
+    RowBox[{"0.508139534883721", " ", "*", " ", "x"}], " ", "+", " ", "0"}]}],
+   " ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f2", "[", "x_", "]"}], "=", " ", 
+   RowBox[{
+    RowBox[{"0.16965116279069764", " ", "*", " ", "x"}], " ", "+", " ", 
+    "38.24"}]}], " ", ";"}]}], "Input",
+ CellChangeTimes->{{3.8610392831518135`*^9, 3.8610393589505205`*^9}, {
+  3.861039694785688*^9, 3.86103969715416*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"de454e2f-5db3-4146-b4c0-edcdc7647bff"],
+
+Cell["Compute area of one wing", "Text",
+ CellChangeTimes->{{3.8610397095808635`*^9, 
+  3.8610397156111126`*^9}},ExpressionUUID->"a6fba915-f110-421f-9590-\
+0263588c0550"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"area", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"f2", "[", "x", "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", "86"}], "}"}]}], "]"}], " ", "-", 
+   " ", 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"f1", "[", "x", "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", "86"}], "}"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.861039374658496*^9, 3.861039427961241*^9}, {
+  3.8610397021203823`*^9, 3.861039702768479*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"98afb1a6-1a28-48be-96e5-dbbcb442e11b"],
+
+Cell[BoxData["2036.91`"], "Output",
+ CellChangeTimes->{{3.861039407388506*^9, 3.8610394284782295`*^9}, 
+   3.8610397044175386`*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"378e1f1c-8d9e-4e77-9242-f0594187b153"]
+}, Open  ]],
+
+Cell["\<\
+Closely matches reported 4000 sqft wing area from Wikipedia. Compute y \
+component of centroid (wings are symmetric over x so xbar will be zero)\
+\>", "Text",
+ CellChangeTimes->{{3.8610397225250683`*^9, 
+  3.861039761093836*^9}},ExpressionUUID->"266ca708-3395-4fe3-a648-\
+b9797f94b776"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ybar", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Integrate", "[", 
+      RowBox[{"y", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", " ", 
+         RowBox[{"f1", "[", "x", "]"}], ",", " ", 
+         RowBox[{"f2", "[", "x", "]"}]}], "}"}]}], "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", "86"}], "}"}]}], "]"}], " ", "/", 
+   " ", "area"}]}]], "Input",
+ CellChangeTimes->{{3.861039448554949*^9, 3.8610394609474382`*^9}, {
+  3.8610395899129157`*^9, 3.8610396126316*^9}, {3.8610397741653085`*^9, 
+  3.861039778823148*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"e9e4655a-937f-445f-aa13-1aa093b2880b"],
+
+Cell[BoxData["30.707449862782344`"], "Output",
+ CellChangeTimes->{3.8610396131881633`*^9, 3.8610397795717525`*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"364889d1-8f61-441c-b150-157b3fb8c52f"]
+}, Open  ]]
+},
+WindowSize->{569.25, 624.75},
+WindowMargins->{{63, Automatic}, {39.75, Automatic}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ab3f503b-e7d0-464b-aae4-73b3201a3d31"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 215, 5, 35, "Text",ExpressionUUID->"75053107-d11b-47b3-bc34-623250e7b4f9"],
+Cell[776, 27, 599, 15, 48, "Input",ExpressionUUID->"de454e2f-5db3-4146-b4c0-edcdc7647bff"],
+Cell[1378, 44, 170, 3, 35, "Text",ExpressionUUID->"a6fba915-f110-421f-9590-0263588c0550"],
+Cell[CellGroupData[{
+Cell[1573, 51, 645, 17, 48, "Input",ExpressionUUID->"98afb1a6-1a28-48be-96e5-dbbcb442e11b"],
+Cell[2221, 70, 209, 3, 32, "Output",ExpressionUUID->"378e1f1c-8d9e-4e77-9242-f0594187b153"]
+}, Open  ]],
+Cell[2445, 76, 296, 6, 58, "Text",ExpressionUUID->"266ca708-3395-4fe3-a648-b9797f94b776"],
+Cell[CellGroupData[{
+Cell[2766, 86, 710, 17, 48, "Input",ExpressionUUID->"e9e4655a-937f-445f-aa13-1aa093b2880b"],
+Cell[3479, 105, 193, 2, 32, "Output",ExpressionUUID->"364889d1-8f61-441c-b150-157b3fb8c52f"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
